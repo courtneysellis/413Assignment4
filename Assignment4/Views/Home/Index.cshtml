@@ -1,8 +1,24 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    ViewBag.Title = "Top 5 Restaurants in the Provo, UT Area";
 }
-
+@model IEnumerable<string>
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <h1 class="display-4" style="color:#17a2b8;">@ViewBag.Title</h1>
+</div>
+<br /><br />
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <ul class="list-unstyled">
+                @foreach (string s in Model)
+                {
+                    <li>@Html.Raw(s)</li>
+                    <br />
+                }
+            </ul>
+        </div>
+        <div class="col">
+            <img src="~/img/downtownprovo.jpg" width="450px" />
+        </div>
+    </div>
 </div>
