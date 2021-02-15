@@ -1,0 +1,31 @@
+﻿@{
+    ViewBag.Title = "Suggested Restaurants";
+}
+@model IEnumerable<Assignment4.Models.UserRestaurant>
+
+<h1 class="display-4" style="color:#17a2b8;">@ViewBag.Title</h1>
+
+<div>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">Suggested By</th>
+                <th scope="col">Restaurant</th>
+                <th scope="col">Favorite Dish</th>
+                <th scope="col">Restaurant Phone #</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!--Prints all info for the user suggesetd restaurants that are stored-->
+            @foreach (Assignment4.Models.UserRestaurant restaurant in Model)
+            {
+                <tr>
+                    <td>@restaurant.UserName</td>
+                    <td>@restaurant.Name</td>
+                    <td>@restaurant.FavDish</td>
+                    <td>@restaurant.Phone</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
